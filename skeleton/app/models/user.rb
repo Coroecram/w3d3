@@ -5,4 +5,10 @@ class User < ActiveRecord::Base
     foreign_key: :student_id,
     primary_key: :id
   )
+
+  has_many(
+    :enrolled_courses,
+    through: :enrollments,
+    source: :course
+  )
 end
