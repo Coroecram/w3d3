@@ -11,4 +11,11 @@ class User < ActiveRecord::Base
     through: :enrollments,
     source: :course
   )
+
+  has_many(
+    :instructed_courses,
+    class_name: "Course",
+    foreign_key: :instructor_id,
+    primary_key: :id
+  )
 end
