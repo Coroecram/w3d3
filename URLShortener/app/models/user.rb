@@ -3,10 +3,16 @@ class User < ActiveRecord::Base
 
 
   has_many(
-    :visits,
+    :visit,
     class_name: "Visit",
     foreign_key: :user_id,
     primary_key: :id
+  )
+
+  has_many(
+    :visited_urls,
+    through: :visit,
+    source: :url
   )
 
 
