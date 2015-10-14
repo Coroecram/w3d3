@@ -24,6 +24,12 @@ class ShortenedURL < ActiveRecord::Base
   # until valid?
   # self.short_url = ShortenedURL.random_code
   # end
+  has_many(
+    :visits,
+    class_name: "Visit",
+    foreign_key: :shortened_url_id,
+    primary_key: :id
+  )
 
 
 end
