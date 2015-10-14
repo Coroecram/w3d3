@@ -72,3 +72,24 @@ SQLite3::SQLException: no such column: enrollments.user_id: SELECT "enrollments"
   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT 1[0m
   [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "enrollments" WHERE "enrollments"."student_id" = ?  [["student_id", 5]]
   [1m[36mEnrollment Load (0.1ms)[0m  [1mSELECT "enrollments".* FROM "enrollments" ORDER BY "enrollments"."id" ASC LIMIT 1[0m
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (47.3ms)[0m  INSERT INTO "users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Wed, 14 Oct 2015 15:52:54 UTC +00:00], ["name", "CJ"], ["updated_at", Wed, 14 Oct 2015 15:52:54 UTC +00:00]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Wed, 14 Oct 2015 15:52:54 UTC +00:00], ["name", "Flarnie"], ["updated_at", Wed, 14 Oct 2015 15:52:54 UTC +00:00]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Wed, 14 Oct 2015 15:52:54 UTC +00:00], ["name", "Jeff"], ["updated_at", Wed, 14 Oct 2015 15:52:54 UTC +00:00]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Wed, 14 Oct 2015 15:52:54 UTC +00:00], ["name", "Georges St. Pierre"], ["updated_at", Wed, 14 Oct 2015 15:52:54 UTC +00:00]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Wed, 14 Oct 2015 15:52:54 UTC +00:00], ["name", "Ned"], ["updated_at", Wed, 14 Oct 2015 15:52:54 UTC +00:00]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "courses" ("created_at", "instructor_id", "name", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Wed, 14 Oct 2015 15:52:54 UTC +00:00], ["instructor_id", 5], ["name", "Ruby 101"], ["updated_at", Wed, 14 Oct 2015 15:52:54 UTC +00:00]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "courses" ("created_at", "instructor_id", "name", "prereq_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Wed, 14 Oct 2015 15:52:54 UTC +00:00], ["instructor_id", 5], ["name", "Ruby 102"], ["prereq_id", 1], ["updated_at", Wed, 14 Oct 2015 15:52:54 UTC +00:00]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "enrollments" ("course_id", "created_at", "student_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["course_id", 1], ["created_at", Wed, 14 Oct 2015 15:52:54 UTC +00:00], ["student_id", 3], ["updated_at", Wed, 14 Oct 2015 15:52:54 UTC +00:00]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "enrollments" ("course_id", "created_at", "student_id", "updated_at") VALUES (?, ?, ?, ?)  [["course_id", 1], ["created_at", Wed, 14 Oct 2015 15:52:54 UTC +00:00], ["student_id", 4], ["updated_at", Wed, 14 Oct 2015 15:52:54 UTC +00:00]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "enrollments" ("course_id", "created_at", "student_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["course_id", 2], ["created_at", Wed, 14 Oct 2015 15:52:54 UTC +00:00], ["student_id", 1], ["updated_at", Wed, 14 Oct 2015 15:52:54 UTC +00:00]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "enrollments" ("course_id", "created_at", "student_id", "updated_at") VALUES (?, ?, ?, ?)  [["course_id", 2], ["created_at", Wed, 14 Oct 2015 15:52:54 UTC +00:00], ["student_id", 2], ["updated_at", Wed, 14 Oct 2015 15:52:54 UTC +00:00]]
+  [1m[36m (2.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mCourse Load (0.4ms)[0m  SELECT "courses".* FROM "courses"
+  [1m[36mCourse Load (0.3ms)[0m  [1mSELECT "courses".* FROM "courses" ORDER BY "courses"."id" ASC LIMIT 1[0m
+  [1m[35mCourse Load (0.4ms)[0m  SELECT "courses".* FROM "courses" ORDER BY "courses"."id" ASC LIMIT 1
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT "courses".* FROM "courses" ORDER BY "courses"."id" ASC LIMIT 1[0m
+  [1m[35mEnrollment Load (0.1ms)[0m  SELECT "enrollments".* FROM "enrollments" ORDER BY "enrollments"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mEnrollment Load (0.2ms)[0m  SELECT "enrollments".* FROM "enrollments" ORDER BY "enrollments"."id" ASC LIMIT 1
+  [1m[36mCourse Load (0.3ms)[0m  [1mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? ORDER BY "courses"."id" ASC LIMIT 1[0m  [["id", 1]]
